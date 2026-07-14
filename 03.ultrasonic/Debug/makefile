@@ -60,8 +60,8 @@ all: main-build
 main-build: 03.Ultrasonic.elf secondary-outputs
 
 # Tool invocations
-03.Ultrasonic.elf 03.Ultrasonic.map: $(OBJS) $(USER_OBJS) C:\Btsilica_Projects\STM32\03.ultrasonic\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "03.Ultrasonic.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Btsilica_Projects\STM32\03.ultrasonic\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="03.Ultrasonic.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+03.Ultrasonic.elf 03.Ultrasonic.map: $(OBJS) $(USER_OBJS) C:\Btsilica_Projects\STM32\03.Ultrasonic\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "03.Ultrasonic.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Btsilica_Projects\STM32\03.Ultrasonic\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="03.Ultrasonic.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
